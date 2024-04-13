@@ -3,6 +3,7 @@
 #include "DoubleLinkedList.h"
 #include "CircularQueueList.h"
 #include "CircularQueueArray.h"
+#include "QueueList.h"
 
 using namespace std;
 
@@ -135,6 +136,29 @@ void CircularQueueArrayEx(){
     cout<<"First element in queue: "<<A.peek()<<endl;
     Shtrix();
 
+}
+
+void QueueListEx(){
+    QueueList <int> A;
+    Shtrix();
+    if (A.isEmpty())
+        cout<<"Queue is empty"<<endl;
+    Shtrix();
+    A.enqueue(1);
+    A.enqueue(0);
+    A.enqueue(2);
+    cout<<A;
+    Shtrix();
+    if (A.isFull())
+        cout<<"Queue is full"<<endl;
+    else cout<<"Queue isn`t full"<<endl;
+    Shtrix();
+    cout<<"Dequeued element: "<<A.dequeue()<<endl;
+    Shtrix();
+    cout<<A;
+    Shtrix();
+    cout<<"First element in queue: "<<A.peek()<<endl;
+    Shtrix();
 }
 int main() {
 //SingleList();

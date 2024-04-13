@@ -40,7 +40,7 @@ public:
 
     T dequeue(){
         if (isEmpty()){
-            throw std::underflow_error("Queue is empty");
+            throw std::underflow_error("Queue is empty!!!");
         }
         T removedElement = elements[front];
         if (front == back){
@@ -54,7 +54,7 @@ public:
 
     T peek() {
         if (isEmpty()) {
-            throw std::out_of_range("Queue is empty");
+            throw std::out_of_range("Queue is empty!!!");
         }
         return elements[front];
     }
