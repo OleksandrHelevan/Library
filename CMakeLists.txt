@@ -10,4 +10,5 @@ add_executable(Library main.cpp
         DoubleLinkedList.h
         CircularQueueList.h
         CircularQueueArray.h
-        QueueList.h)
+        QueueList.h
+        QueueArray.h)
