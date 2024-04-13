@@ -1,6 +1,7 @@
 #include <iostream>
 #include "SinglyLinkedList.h"
 #include "DoubleLinkedList.h"
+#include "CircularQueue.h"
 
 using namespace std;
 
@@ -87,7 +88,26 @@ void DoubleList(){
     cout<<"Size of list: "<<B.getSize()<<endl;
     cout<<B[3]-B[2];
 }
+
+void CircularQueueEx(){
+    CircularQueue<int> A;
+    Shtrix();
+    if (A.isEmpty())
+        cout<<"Queue is empty"<<endl;
+    Shtrix();
+    A.enqueue(1);
+    A.enqueue(0);
+    A.enqueue(2);
+    if (A.isFull())
+        cout<<"Queue is full"<<endl;
+    else cout<<"Queue isn`t full"<<endl;
+    Shtrix();
+    A.dequeue();
+    cout<<"First element in queue: "<<A.peek()<<endl;
+    Shtrix();
+}
 int main() {
 //SingleList();
 //DoubleList();
+CircularQueueEx();
 }

@@ -7,4 +7,5 @@ add_executable(Library main.cpp
         SingleNode.h
         SinglyLinkedList.h
         DoubleNode.h
-        DoubleLinkedList.h)
+        DoubleLinkedList.h
+        CircularQueue.h)
