@@ -41,7 +41,6 @@ public:
         }else{
             front++;
         }
-//        std::cout << "Dequeued: " << removedElem << std::endl;
         return removedElem;
     }
     T peek(){

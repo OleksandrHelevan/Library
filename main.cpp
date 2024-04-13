@@ -5,6 +5,7 @@
 #include "CircularQueueArray.h"
 #include "QueueList.h"
 #include "QueueArray.h"
+#include "StackList.h"
 
 using namespace std;
 
@@ -89,7 +90,7 @@ void DoubleList(){
         cout<<"List has 2"<<endl;
     else cout<<"List don`t have 2"<<endl;
     cout<<"Size of list: "<<B.getSize()<<endl;
-    cout<<B[3]-B[2];
+    cout<<B[3]-B[2]<<endl;
 }
 
 void CircularQueueListEx(){
@@ -185,11 +186,32 @@ void QueueArrayEx(){
     Shtrix();
 
 }
+
+void StackListEx(){
+    StackList <int> A;
+    Shtrix();
+    if (A.isEmpty())
+        cout<<"Stack is empty"<<endl;
+    Shtrix();
+    A.push(1);
+    A.push(0);
+    A.push(2);
+    cout<<A;
+    Shtrix();
+    cout<<"Poped element: "<<A.pop()<<endl;
+    Shtrix();
+    cout<<A;
+    Shtrix();
+    cout<<"First element in stack: "<<A.peek()<<endl;
+    Shtrix();
+
+}
+
 int main() {
 
 //SingleList();
 
-//DoubleList();
+DoubleList();
 
 //CircularQueueListEx();
 
@@ -198,5 +220,7 @@ int main() {
 //QueueListEx();
 
 //QueueArrayEx();
+
+//StackListEx();
 
 }
