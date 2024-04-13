@@ -1,7 +1,8 @@
 #include <iostream>
 #include "SinglyLinkedList.h"
 #include "DoubleLinkedList.h"
-#include "CircularQueue.h"
+#include "CircularQueueList.h"
+#include "CircularQueueArray.h"
 
 using namespace std;
 
@@ -89,8 +90,8 @@ void DoubleList(){
     cout<<B[3]-B[2];
 }
 
-void CircularQueueEx(){
-    CircularQueue<int> A;
+void CircularQueueListEx(){
+    CircularQueueList<int> A;
     Shtrix();
     if (A.isEmpty())
         cout<<"Queue is empty"<<endl;
@@ -98,16 +99,46 @@ void CircularQueueEx(){
     A.enqueue(1);
     A.enqueue(0);
     A.enqueue(2);
+    cout<<A;
+    Shtrix();
     if (A.isFull())
         cout<<"Queue is full"<<endl;
     else cout<<"Queue isn`t full"<<endl;
     Shtrix();
-    A.dequeue();
+    cout<<"Dequeued element: "<<A.dequeue()<<endl;
+    Shtrix();
+    cout<<A;
+    Shtrix();
     cout<<"First element in queue: "<<A.peek()<<endl;
     Shtrix();
+}
+
+void CircularQueueArrayEx(){
+    CircularQueueArray <int> A;
+    Shtrix();
+    if (A.isEmpty())
+        cout<<"Queue is empty"<<endl;
+    Shtrix();
+    A.enqueue(1);
+    A.enqueue(0);
+    A.enqueue(2);
+    cout<<A;
+    Shtrix();
+    if (A.isFull())
+        cout<<"Queue is full"<<endl;
+    else cout<<"Queue isn`t full"<<endl;
+    Shtrix();
+    cout<<"Dequeued element: "<<A.dequeue()<<endl;
+    Shtrix();
+    cout<<A;
+    Shtrix();
+    cout<<"First element in queue: "<<A.peek()<<endl;
+    Shtrix();
+
 }
 int main() {
 //SingleList();
 //DoubleList();
-CircularQueueEx();
+//CircularQueueListEx();
+CircularQueueArrayEx();
 }

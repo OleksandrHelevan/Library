@@ -1,20 +1,21 @@
 
-#ifndef LIBRARY_CIRCULARQUEUE_H
-#define LIBRARY_CIRCULARQUEUE_H
+#ifndef LIBRARY_CIRCULARQUEUELIST_H
+#define LIBRARY_CIRCULARQUEUELIST_H
 
 #include <iostream>
+#include <ostream>
 #include "DoubleLinkedList.h"
 using namespace std;
 
 template<typename T>
-class CircularQueue {
+class CircularQueueList {
 private:
     DoubleLinkedList<T> list;
     size_t capacity;
 public:
-    CircularQueue() = default;
+    CircularQueueList() = default;
 
-    CircularQueue(size_t capacity) : list(), capacity(capacity) {}
+    CircularQueueList(size_t capacity) : list(), capacity(capacity) {}
 
     bool isEmpty() const {
         if(list.getSize() == 0)
@@ -27,7 +28,7 @@ public:
     }
 
     void enqueue(const T &obj) {
-        list.insertAtBeginning(obj);
+        list.insertAtEnd(obj);
     }
 
     T dequeue() {
@@ -35,7 +36,7 @@ public:
             throw std::underflow_error("Queue is empty!!!");
         }
         T obj = list[0];
-        list.removeFromEnd();
+        list.removeFromBeginning();
         return obj;
     }
 
@@ -47,9 +48,9 @@ public:
     }
 
 
-    friend std::ostream &operator<<(std::ostream &os, const CircularQueue<T> &circularQueue) {
+    friend ostream &operator<<(ostream &os, CircularQueueList<T> &circularQueue) {
         os << circularQueue.list;
         return os;
     }
 };
-#endif //LIBRARY_CIRCULARQUEUE_H
+#endif //LIBRARY_CIRCULARQUEUELIST_H
