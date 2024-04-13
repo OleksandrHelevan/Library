@@ -10,7 +10,11 @@ template <typename T>
 class SinglyLinkedList {
     unique_ptr<SingleNode<T>>head;
     int size;
-    void checkIndex(int index) const;
+    void checkIndex(int index) const {
+    if (index < 0 && index >= size) {
+        throw std::out_of_range("Index out of range");
+    }
+}
 
 public:
     SinglyLinkedList(): head{nullptr},size{0}{};
@@ -25,13 +29,13 @@ public:
 
     void InsertAtEnd(T obj){
         unique_ptr<SingleNode<T>> newNode = make_unique<SingleNode<T>>(obj);
-        SingleNode <T> *current = head.get();
+        SingleNode<T> *current = head.get();
         if (!current) {
             head = std::move(newNode);
             size++;
             return;
         }
-        while (current->next) {
+        while (current->next != nullptr) {
             current = current->next.get();
         }
         current->next = std::move(newNode);
@@ -47,14 +51,13 @@ public:
         return current->data;
     };
 
-    void InsertAtIndex(int index, T obj){
+   void InsertAtIndex( int index, T obj){
         checkIndex(index);
-
         if (index == 0) {
-            insertAtBeginning(obj);
+            T insertAtBeginning(obj);
             return;
         } else if (index == size) {
-            insertAtEnd(obj);
+            T insertAtEnd(obj);
             return;
         } else {
             unique_ptr<SingleNode<T>> newNode = make_unique<SingleNode<T>>(obj);
@@ -66,6 +69,7 @@ public:
             current->next = std::move(newNode);
             size++;
         }
+
     };
 
     void removeFromBeginning(){
@@ -84,13 +88,14 @@ public:
             head.reset();
             --size;
             return;
+        }else {
+            SingleNode<T> *current = head.get();
+            while (current->next->next) {
+                current = current->next.get();
+            }
+            current->next.reset();
+            --size;
         }
-        SingleNode <T> *current = head.get();
-        while (current->next->next) {
-            current = current->next.get();
-        }
-        current->next.reset();
-        --size;
     };
 
     void removeAtIndex(int index){
@@ -101,14 +106,14 @@ public:
         } else if (index == size - 1) {
             removeFromEnd();
             return;
+        }else {
+            SingleNode<T> *current = head.get();
+            for (int i = 0; i < index - 1; i++) {
+                current = current->next.get();
+            }
+            current->next = std::move(current->next->next);
+            --size;
         }
-
-        SingleNode<T> *current = head.get();
-        for (int i = 0; i < index - 1; i++) {
-            current = current->next.get();
-        }
-        current->next = std::move(current->next->next);
-        --size;
     };
 
     bool search(T obj) const{
@@ -139,7 +144,7 @@ public:
             os << current->data << " ";
             current = current->next.get();
         }
-        os << endl;
+        return os << endl;
     };
 
 };
