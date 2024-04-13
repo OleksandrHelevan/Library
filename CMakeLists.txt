@@ -5,4 +5,5 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Library main.cpp
         SingleNode.h
-        SinglyLinkedList.h)
+        SinglyLinkedList.h
+        DoubleNode.h)
