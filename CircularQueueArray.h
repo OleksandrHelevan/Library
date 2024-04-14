@@ -59,7 +59,7 @@ public:
         return elements[front];
     }
 
-    friend std::ostream& operator<<(std::ostream& os, CircularQueueArray<T>& queue) {
+    friend ostream& operator<<(std::ostream& os, CircularQueueArray<T>& queue) {
         if (queue.isEmpty()) {
             os << "Queue is empty!!!";
         } else {

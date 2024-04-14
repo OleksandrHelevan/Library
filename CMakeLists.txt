@@ -12,4 +12,5 @@ add_executable(Library main.cpp
         CircularQueueArray.h
         QueueList.h
         QueueArray.h
-        StackList.h)
+        StackList.h
+        StackArray.h)

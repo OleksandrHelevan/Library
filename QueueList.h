@@ -44,7 +44,7 @@ public:
         return list[0];
     }
 
-    friend std::ostream& operator<<(ostream &os, QueueList <T> &queue) {
+    friend ostream& operator<<(ostream &os, QueueList <T> &queue) {
         os << queue.list;
         return os;
     }

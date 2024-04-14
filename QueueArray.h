@@ -50,7 +50,7 @@ public:
         return element[front];
     }
 
-    friend std::ostream& operator<<(std::ostream& os, QueueArray<T>& queue) {
+    friend ostream& operator<<(std::ostream& os, QueueArray<T>& queue) {
         if (queue.isEmpty()) {
             os << "Queue is empty!!!";
         } else {

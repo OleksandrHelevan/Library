@@ -39,7 +39,7 @@ public:
         return list.getSize();
     }
 
-    friend std::ostream& operator<<(std::ostream& os, StackList<T>& stack) {
+    friend ostream& operator<<(std::ostream& os, StackList<T>& stack) {
         os << stack.list;
         return os;
     }

@@ -6,6 +6,7 @@
 #include "QueueList.h"
 #include "QueueArray.h"
 #include "StackList.h"
+#include "StackArray.h"
 
 using namespace std;
 
@@ -207,11 +208,31 @@ void StackListEx(){
 
 }
 
+void StackArrayEx(){
+    StackArray<int>A;
+    Shtrix();
+    if (A.isEmpty())
+        cout<<"Stack is empty"<<endl;
+    Shtrix();
+    A.push(1);
+    A.push(0);
+    A.push(2);
+    cout<<A;
+    Shtrix();
+    cout<<"Poped element: "<<A.pop()<<endl;
+    Shtrix();
+    cout<<A;
+    Shtrix();
+    cout<<"First element in stack: "<<A.peek()<<endl;
+    Shtrix();
+
+}
+
 int main() {
 
 //SingleList();
 
-DoubleList();
+//DoubleList();
 
 //CircularQueueListEx();
 
@@ -222,5 +243,7 @@ DoubleList();
 //QueueArrayEx();
 
 //StackListEx();
+
+StackArrayEx();
 
 }
