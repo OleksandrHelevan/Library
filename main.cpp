@@ -51,7 +51,7 @@ void SingleList (){
         cout<<"List has 2"<<endl;
     else cout<<"List don`t have 2"<<endl;
     cout<<"Size of list: "<<A.getSize()<<endl;
-    cout<<A[3]-A[2];
+    cout<<A[3]-A[2]<<endl;
 }
 
 void DoubleList(){
@@ -230,9 +230,9 @@ void StackArrayEx(){
 
 int main() {
 
-//SingleList();
+SingleList();
 
-//DoubleList();
+DoubleList();
 
 //CircularQueueListEx();
 

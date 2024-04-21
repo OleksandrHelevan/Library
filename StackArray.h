@@ -8,9 +8,6 @@ class StackArray{
     int capacity;
     int top;
 public:
-
-public:
-
     StackArray(){
         capacity = 10;
         top = 0;

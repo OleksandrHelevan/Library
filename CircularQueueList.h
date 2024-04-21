@@ -20,7 +20,7 @@ public:
     bool isEmpty() const {
         if(list.getSize() == 0)
             return true;
-        else return false;
+        return false;
     }
 
     bool isFull() const {
@@ -28,7 +28,7 @@ public:
     }
 
     void enqueue(const T &obj) {
-        list.insertAtEnd(obj);
+        list.insertAtEndEx(obj);
     }
 
     T dequeue() {
